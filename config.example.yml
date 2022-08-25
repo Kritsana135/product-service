@@ -1,0 +1,5 @@
+app:
+  port: "8080"
+
+mongo:
+  uri: "mongodb+srv://{username}:{password}@{host}/{db_name}?retryWrites=true&w=majority"
