@@ -1,0 +1,44 @@
+input Variant {
+  title: String!
+  options: [String!]!
+}
+
+input GenerateVariantsInput {
+  variants: [Variant!]!
+}
+
+type GenerateVariantsPayload {
+  sku: String!
+  variantTitle: [String]!
+  variantOptions: [String]!
+  factoryPrice: Float!
+  shopPrice: Float!
+  customerPrice: Float!
+  quantity: Int!
+  fileKey: String!
+}
+
+input ProductVaraint {
+  variantTitle: [String]!
+  variantOptions: [String]!
+  factoryPrice: Float!
+  shopPrice: Float!
+  customerPrice: Float!
+  quantity: Int!
+  fileKey: String
+  sku: String
+}
+
+input CreateProductInput {
+  name: String!
+  description: String!
+  variants: [ProductVaraint!]
+}
+
+type Mutation {
+  generateVariants(input: GenerateVariantsInput!): [GenerateVariantsPayload!]!
+}
+
+type Query {
+  me: String
+}
